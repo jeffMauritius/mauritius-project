@@ -1,5 +1,5 @@
-import { ThemeProvider } from "@/src/components/theme-provider"
-import "@/app/globals.css"
+import { ThemeProvider } from "@/components/theme-provider"
+import "@/styles/globals.css"
 import { Inter as FontSans } from "next/font/google"
 
 import { cn } from "@/src/lib/utils"

@@ -7,5 +7,4 @@
 /.env
 /.idea/
 .next
-.history
 /cypress
