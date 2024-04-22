@@ -1,5 +1,4 @@
-import { NavigationMenuComponent } from "@/src/components/navigationMenu"
-import { Button } from "@/src/components/ui/button"
+import { NavigationMenuComponent } from "@/components/navigationMenu"
 
 export default function Home() {
   return (

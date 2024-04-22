@@ -1,8 +1,8 @@
-import { ThemeProvider } from "@/src/components/theme-provider"
+import { ThemeProvider } from "@/components/theme-provider"
 import "@/app/globals.css"
 import { Inter as FontSans } from "next/font/google"
 
-import { cn } from "@/src/lib/utils"
+import { cn } from "@/lib/utils"
 
 const fontSans = FontSans({
   subsets: ["latin"],
