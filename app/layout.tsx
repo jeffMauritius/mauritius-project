@@ -1,6 +1,7 @@
 import { ThemeProvider } from "@/components/theme-provider"
-import "@/app/globals.css"
+import "@/styles/globals.css"
 import { Inter as FontSans } from "next/font/google"
+import { ClerkProvider } from "@clerk/nextjs"
 
 import { cn } from "@/lib/utils"
 
@@ -14,7 +15,7 @@ type RootLayoutProps = {
 }
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <>
+    <ClerkProvider>
       <html lang="en" suppressHydrationWarning>
         <head />
         <body
@@ -33,6 +34,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
           </ThemeProvider>
         </body>
       </html>
-    </>
+    </ClerkProvider>
   )
 }
