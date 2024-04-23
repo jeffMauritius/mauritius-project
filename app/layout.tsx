@@ -1,9 +1,19 @@
+"use client"
+
 import { ThemeProvider } from "@/components/theme-provider"
 import "@/styles/globals.css"
 import { Inter as FontSans } from "next/font/google"
-import { ClerkProvider } from "@clerk/nextjs"
+import {
+  ClerkProvider,
+  SignInButton,
+  SignedIn,
+  SignedOut,
+  UserButton,
+} from "@clerk/nextjs"
 
 import { cn } from "@/lib/utils"
+import { NavigationMenuComponent } from "@/components/navigationMenu"
+import { dark } from "@clerk/themes"
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -14,6 +24,22 @@ type RootLayoutProps = {
   children: React.ReactNode
 }
 export default function RootLayout({ children }: RootLayoutProps) {
+  function Header() {
+    return (
+      <header className="flex p-6 justify-end gap-4">
+        <div className="flex flex-1">
+          {" "}
+          <NavigationMenuComponent />
+        </div>
+        <SignedIn>
+          <UserButton appearance={dark} />
+        </SignedIn>
+        <SignedOut>
+          <SignInButton />
+        </SignedOut>
+      </header>
+    )
+  }
   return (
     <ClerkProvider>
       <html lang="en" suppressHydrationWarning>
@@ -30,7 +56,8 @@ export default function RootLayout({ children }: RootLayoutProps) {
             enableSystem
             disableTransitionOnChange
           >
-            {children}
+            <Header />
+            <div className="flex h-full p-6 justify-center">{children}</div>
           </ThemeProvider>
         </body>
       </html>
