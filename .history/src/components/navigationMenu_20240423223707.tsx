@@ -61,7 +61,7 @@ export function NavigationMenuComponent() {
           <Ship color="hsl(var(--primary)" size={48} />
         </NavigationMenuItem>
         <NavigationMenuItem className="flex flex-col text-right pr-10 ">
-          <p className="text-lg font-bold font-mono">
+          <p className="text-lg font-bold font-mono tracking-wide">
             Rousseljf<span className="text-orange-500 italic">.com</span>
           </p>
           <p className="text-sm tracking-wide italic text-orange-500">
